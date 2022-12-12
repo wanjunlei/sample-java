@@ -9,7 +9,7 @@ WORKDIR /app
 RUN mvn package
 
 ### final stage, used to setup the open liberty runtime
-FROM ghcr.io/shipwright-io/shipwright-samples/open-liberty:kernel-java8-openj9-ubi
+FROM ibm-semeru-runtimes:open-11-jdk
 
 # copy liberty config
 COPY --chown=1001:0 src/main/liberty/config/ /config/
